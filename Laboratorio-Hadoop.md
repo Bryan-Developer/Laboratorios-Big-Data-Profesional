@@ -65,3 +65,33 @@ drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:33 /user/u47774417/e
 drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:19 /user/u47774417/ejercicio1/data2/2017-01-29
 drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:16 /user/u47774417/ejercicio1/data3
 ```
+22. Ahora se procede a cambiar los permisos de carpetas y archivos previamente agregados o creados, se usara el siguiente comando ```hdfs dfs -chmod [codigos] [Ruta-del-archivo-hdfs]``` y para dar permisos de lectura-escritura-ejecucion, para cambiar los dueños y grupos del archivo ```hdfs dfs -chwon [-R:opcional-recursividad] [usuario:grupo] [Ruta-del-archivo-hdfs]```
+23. Ejecuta el siguiente comando ```hdfs dfs -chown usuario5:grupoA /user/u47774417/ejercicio1/data1/file.csv```.
+24. Ejecuta el siguiente comando ```hdfs dfs -chown -R usuario2:grupoK /user/u47774417/ejercicio1/data2```.
+25. Ejecuta el siguiente comando ```hdfs dfs -chmod 755 /user/u47774417/ejercicio1/data1/file.csv```.
+26. Ejecuta el siguiente comando ```hdfs dfs -chmod 700 /user/u47774417/ejercicio1/data1/voidfile.csv```.
+27. Ejecuta el siguiente comando ```hdfs dfs -chmod -R 777 /user/u47774417/ejercicio1/data2```.
+28. Ejecute el siguiente comando para visualizar la configuracion de permisos, dueños y grupos que previamente se realizo ```hdfs dfs -ls -R /user/u47774417```
+```bash
+[hdfs@vmcloudera01 u47774417]$ hdfs dfs -ls -R /user/u47774417
+drwx------+  - u47774417 u47774417          0 2020-05-17 08:01 /user/u47774417/.Trash
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:16 /user/u47774417/ejercicio1
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:17 /user/u47774417/ejercicio1/carpeta1
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:33 /user/u47774417/ejercicio1/carpeta1/subcarpeta1
+-rw-r--r--+  3 u47774417 u47774417       7282 2020-05-17 08:33 /user/u47774417/ejercicio1/carpeta1/subcarpeta1/persona.data
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:17 /user/u47774417/ejercicio1/carpeta1/subcarpeta2
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:17 /user/u47774417/ejercicio1/carpeta1/subcarpeta3
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:33 /user/u47774417/ejercicio1/carpeta2
+-rw-r--r--+  3 u47774417 u47774417        105 2020-05-17 08:33 /user/u47774417/ejercicio1/carpeta2/empresa.data
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:15 /user/u47774417/ejercicio1/carpeta3
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:33 /user/u47774417/ejercicio1/data1
+-rwxr-xr-x+  3 usuario5  grupoA             0 2020-05-17 08:33 /user/u47774417/ejercicio1/data1/file.csv
+-rwx------+  3 u47774417 u47774417          0 2020-05-17 08:33 /user/u47774417/ejercicio1/data1/voidfile.csv
+drwxrwxrwx+  - usuario2  grupoK             0 2020-05-17 08:19 /user/u47774417/ejercicio1/data2
+drwxrwxrwx+  - usuario2  grupoK             0 2020-05-17 08:33 /user/u47774417/ejercicio1/data2/2017-01-27
+-rwxrwxrwx+  3 usuario2  grupoK             0 2020-05-17 08:33 /user/u47774417/ejercicio1/data2/2017-01-27/file.csv
+drwxrwxrwx+  - usuario2  grupoK             0 2020-05-17 08:33 /user/u47774417/ejercicio1/data2/2017-01-28
+-rwxrwxrwx+  3 usuario2  grupoK             0 2020-05-17 08:33 /user/u47774417/ejercicio1/data2/2017-01-28/file.csv
+drwxrwxrwx+  - usuario2  grupoK             0 2020-05-17 08:19 /user/u47774417/ejercicio1/data2/2017-01-29
+drwxr-xr-x+  - u47774417 u47774417          0 2020-05-17 08:16 /user/u47774417/ejercicio1/data3
+```
